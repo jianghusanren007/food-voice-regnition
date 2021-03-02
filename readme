@@ -1,0 +1,18 @@
+这是一个音频分类的baseline，将20种不同类别的声音进行正确识别所属种类。
+
+baseline流程：
+1，对音频数据进行统一格式化处理：sox_audio.sh。
+2，提取mfcc特征：extract_mfcc_datawhale.py。
+3，划分训练集和测试集：write_json_datawhale.py。
+4，前面准备工作做好后，运行train.py，生成的模型保存在exp文件夹下。
+
+备注：
+1，采用的是简单的LSTM作为我们的baseline
+2，评价标准是acc，损失函数是交叉熵
+
+
+本模型运行环境：
+python35 + torch1.1 + torchvision0.3 + cuda9.0
+
+环境安装：
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=9.0 -c pytorch
